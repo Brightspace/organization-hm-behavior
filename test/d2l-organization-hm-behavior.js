@@ -161,4 +161,25 @@ describe('d2l-organization-hm-behavior', function() {
 			expect(link).to.equal('http://image.com/tile-low-density-max.png 540w, http://image.com/tile-high-density-max.png 1080w');
 		});
 	});
+
+	describe('getPictureSrcsets', function() {
+		it('should return undefined if a linked entity is passed in', function() {
+			var srcsets = component.getPictureSrcsets(imageLinkedEntity);
+			expect(srcsets).to.be.undefined;
+		});
+		it('should return a tile set of srcsets based on the links available', function() {
+			var srcsets = component.getPictureSrcsets(imageEntity, 'tile');
+			expect(srcsets).to.deep.equal([
+				{ type: 'image/jpeg', srcset: 'http://image.com/tile-low-density-max.jpg 540w, http://image.com/tile-high-density-max.jpg 1080w' },
+				{ type: 'image/webp', srcset: 'http://image.com/tile-low-density-max.webp 540w, http://image.com/tile-high-density-max.webp 1080w' },
+			]);
+		});
+		it('should return a banner set of srcsets on the links available', function() {
+			var srcsets = component.getPictureSrcsets(imageEntity, 'narrow');
+			expect(srcsets).to.deep.equal([
+				{ type: 'image/jpeg', srcset: 'http://image.com/banner-narrow-low-density-max.jpg 767w, http://image.com/banner-narrow-high-density-max.jpg?test=value 1534w' },
+				{ type: 'image/webp', srcset: 'http://image.com/banner-narrow-low-density-max.webp 767w, http://image.com/banner-narrow-high-density-max.webp?test=value 1534w' },
+			]);
+		});
+	});
 });
