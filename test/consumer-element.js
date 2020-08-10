@@ -1,10 +1,8 @@
-import '../d2l-organization-hm-behavior.js';
-import '@polymer/polymer/polymer-legacy.js';
-import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { LitElement } from 'lit-element';
+import { D2LOrganizationHMBehaviorMixin } from '../d2l-organization-hm-behavior';
 
-Polymer({
-	is: 'consumer-element',
-	behaviors: [
-		D2L.PolymerBehaviors.Hypermedia.OrganizationHMBehavior
-	]
-});
+export class ConsumerElement extends D2LOrganizationHMBehaviorMixin(LitElement) {
+
+}
+
+customElements.define('consumer-element', ConsumerElement);
