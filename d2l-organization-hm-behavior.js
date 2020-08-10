@@ -1,3 +1,6 @@
+/*
+* General utility functions for parsing organization siren entities.
+*/
 export const D2LOrganizationHMBehaviorMixin = (superclass) => class extends superclass {
 	constructor() {
 		super();
