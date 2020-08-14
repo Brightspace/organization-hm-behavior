@@ -1,7 +1,7 @@
 /*
 * General utility functions for parsing organization siren entities.
 */
-export const D2LOrganizationHMBehaviorMixin = (superclass) => class extends superclass {
+export const D2LOrganizationHMMixin = (superclass) => class extends superclass {
 	constructor() {
 		super();
 		this._sizeNames = ['lowMin', 'lowMid', 'lowMax', 'highMin', 'highMid', 'highMax'];
