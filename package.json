@@ -45,6 +45,6 @@
     "supports-color": "3.1.2",
     "type-detect": "1.0.0"
   },
-  "main": "d2l-organization-hm-behavior.js",
+  "main": "d2l-organization-hm-mixin.js",
   "dependencies": {}
 }
