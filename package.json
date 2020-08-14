@@ -14,9 +14,8 @@
   "name": "d2l-organization-hm-behavior",
   "scripts": {
     "test": "npm run lint && npm run test:polymer:local",
-    "lint": "npm run lint:wc && npm run lint:js",
+    "lint": "npm run lint:js",
     "lint:js": "eslint . --ext .js,.html test/**/*.js test/**/*.html",
-    "lint:wc": "polymer lint",
     "test:polymer:local": "polymer test --skip-plugin sauce",
     "test:polymer:sauce": "polymer test --skip-plugin local"
   },
@@ -36,9 +35,10 @@
     "eslint-plugin-html": "^5.0.0",
     "polymer-cli": "^1.9.1",
     "siren-parser": "^8.0.0",
-    "wct-browser-legacy": "^1.0.1"
+    "wct-browser-legacy": "^1.0.1",
+    "lit-element": "^2.2.1"
   },
-  "version": "3.1.0",
+  "version": "4.0.0",
   "resolutions": {
     "inherits": "2.0.3",
     "samsam": "1.1.3",

@@ -1,28 +1,17 @@
-# d2l-organization-hm-behavior
+# d2l-organization-hm-mixin
 
-A [Polymer](https://www.polymer-project.org/1.0/)-based web component D2L behavior element.
-
-For further information on this and other D2L UI components, see the docs at [ui.valence.d2l.com](http://ui.valence.d2l.com/).
-
-## Installation
-
-`d2l-organization-hm-behavior` can be installed from Bower:
-```shell
-bower install git://github.com/Brightspace/organization-hm-behavior.git#v0.0.1
-```
+A LitElement mixin providing general utility functions for parsing organization siren entities.
 
 ## Usage
+The mixin can be included as a superclass to any class that needs the functionality added, and supports chaining mixins.
+
 ```js
-behaviors: [
-	D2L.PolymerBehaviors.Hypermedia.OrganizationHMBehavior
-],
+export const className = (superclass) => class extends D2LOrganizationHMBehaviorMixin(superclass)
 ```
 
 ## Running tests locally in Windows
 
-Tests in this repo use web-component-tester (WCT). Currently WCT has an issue in Windows with tests taking about a minute to start.  A workaround is to set two environment variables for Launchpad (a library used by WCT).  These help bypass browser searching which is what causes the delay.  For example:
-LAUNCHPAD_BROWSERS=CHROME
-LAUNCHPAD_CHROME-'C:\Program Files (x86)\Google\Chrome\Application'
+To run tests, run the `npm test` command.
 
 ## Coding styles
 
